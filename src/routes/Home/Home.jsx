@@ -6,7 +6,6 @@ import List from '../../containers/List';
 
 const Home = () => {
   const list = useContext(ListContext);
-  console.log(list)
 
   return (
     <main className="container">

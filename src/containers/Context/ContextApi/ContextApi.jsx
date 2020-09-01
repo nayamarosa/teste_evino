@@ -13,7 +13,7 @@ const ListProvider = ({children}) => {
         .then(data => setList(data.data.products));
       } catch (e) {
         console.error(e);
-        throw "Serviço indisponível, tente novamente mais tarde"
+        throw new Error("Serviço indisponível, tente novamente mais tarde")
       }
     };
     fetchData();
