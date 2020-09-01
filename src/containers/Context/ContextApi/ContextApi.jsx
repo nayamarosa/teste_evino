@@ -8,9 +8,9 @@ const ListProvider = ({children}) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        await fetch('https://demo6507195.mockable.io/burger-queen')
+        await fetch('https://api.evino.com.br/catalog/v2/product')
         .then((res) => res.json())
-        .then(data => setList(data));
+        .then(data => setList(data.data.products));
       } catch (e) {
         console.error(e);
       }
@@ -22,7 +22,7 @@ const ListProvider = ({children}) => {
     <ListContext.Provider value={list}>
       {children}
     </ListContext.Provider>
-    )
-  }
+  )
+}
   
-  export default ListProvider; 
+export default ListProvider; 
