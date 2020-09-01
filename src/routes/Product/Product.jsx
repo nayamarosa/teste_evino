@@ -1,14 +1,24 @@
 import React, { useContext } from 'react';
+import { useLocation } from "react-router-dom";
 
 import { ListContext } from '../../containers/Context';
-import List from '../../containers/List';
 
 const Product = () => {
   const list = useContext(ListContext);
+  const [productSelected, setproductSelected] = useState([]);
+
+  let location = useLocation();
+  useEffect(() => {
+    let pathname = location.pathname;
+    let productUrl = pathname.split("/")[2];
+    const filter = list.filter((item) => item.sku.includes(productUrl));
+    
+    setproductSelected(filter)     
+  }, [location.pathname, products])
 
   return (
     <main className="container">
-      <List list={list}/>
+      <ProductDetail productSelected={productSelected}/>
     </main>
   )
 }
