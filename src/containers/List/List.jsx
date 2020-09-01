@@ -1,11 +1,10 @@
 import React from 'react';
-import './List.scss';
 
 import ListItem from '../../components/ListItem';
 
 const List = ({list}) => {
   return (
-    <ul>
+    <ul className="list">
       {list.map(item => <ListItem item={item} 
         key={item.sku} />
       )} 

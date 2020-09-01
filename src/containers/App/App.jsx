@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import './App.scss';
+import '../../styles/main.scss';
 
 import { ListProvider } from '../Context';
 import Header from '../../components/Header';
