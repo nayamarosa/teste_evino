@@ -1,0 +1,12 @@
+.btn {
+  background-color: transparent;
+  border: none;
+  &__primary {
+    padding: 8px 32px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $burgundy;
+    border: 1px solid $burgundy;
+    border-radius: 4px;
+  }
+}
