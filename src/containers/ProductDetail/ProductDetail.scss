@@ -1,14 +1,19 @@
 .product {
   
   &__image {
-    width: 100%;
-    margin: 0 0 32px;
-    padding: 0 16px;
+    width: 90%;
+    height: 300px;
+    margin: 0 auto 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #CCCCCC;
     & img {
       width: 100%;
-      padding: 0 0 16px;
+      height: 100%;
       display: block;
-      border-bottom: 1px solid $gray;
+      object-fit: contain;
     }
   }
   
