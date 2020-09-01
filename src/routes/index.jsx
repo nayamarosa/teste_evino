@@ -8,6 +8,9 @@ const Routes = () => (
     <Route exact path="/">
       <Home />
     </Route>
+    <Route exact path="/produto/:producturl">
+      <Home />
+    </Route>
   </Switch>
 );
 

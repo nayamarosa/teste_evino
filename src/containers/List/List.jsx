@@ -1,13 +1,21 @@
 import React from 'react';
-import './List.scss';
+import { useHistory } from "react-router-dom";
 
 import ListItem from '../../components/ListItem';
 
 const List = ({list}) => {
+  let history = useHistory();
+  const handleProductCode = (e, url) => {
+    e.preventDefault()
+    history.push('/produto/' + url);
+  }
+
   return (
-    <ul>
+    <ul className="list">
       {list.map(item => <ListItem item={item} 
-        key={item.sku} />
+        key={item.sku}
+        onClick={(e) => handleProductCode(e, item.sku)}
+        />
       )} 
     </ul>
   )
