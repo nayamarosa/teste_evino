@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
 
 import { ListContext } from '../../containers/Context';
+import Loading from '../../components/Loading';
 import List from '../../containers/List';
 
 const Home = () => {
   const list = useContext(ListContext);
+  console.log(list)
 
   return (
     <main className="container">
-      <List list={list}/>
+      {
+        list === []
+        ? <Loading />
+        : <List list={list}/>
+      }
     </main>
   )
 }

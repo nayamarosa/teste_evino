@@ -1,10 +1,9 @@
 import React from 'react';
-import './Header.scss';
 
 const Header = () => {
   return (
-    <header>
-      Header
+    <header className="header">
+      <h1>d . <span>( e )</span></h1>
     </header>
   )
 }

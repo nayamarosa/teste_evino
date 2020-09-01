@@ -5,7 +5,7 @@ import ListItem from '../../components/ListItem';
 
 const List = ({list}) => {
   let history = useHistory();
-  const handleProductCode = (e, url) => {
+  const handleProductUrl = (e, url) => {
     e.preventDefault()
     history.push('/product/' + url);
   }
@@ -14,7 +14,7 @@ const List = ({list}) => {
     <ul className="list">
       {list.map(item => <ListItem item={item} 
         key={item.sku}
-        onClick={(e) => handleProductCode(e, item.url)}
+        onClick={(e) => handleProductUrl(e, item.url)}
         />
       )} 
     </ul>
