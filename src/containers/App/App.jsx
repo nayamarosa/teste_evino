@@ -1,16 +1,19 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 
 import { ListProvider } from '../Context';
 import Header from '../../components/Header';
-import List from '../List';
+import Routes from '../../routes';
 import Footer from '../../components/Footer';
 
 const App = () => (
   <ListProvider>
-    <Header />
-    <List />
-    <Footer />
+    <BrowserRouter>
+      <Header />
+        <Routes />
+      <Footer />
+    </BrowserRouter>
   </ListProvider>
 );
 
