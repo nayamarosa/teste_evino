@@ -1,13 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
-
-import { ListContext } from '../../containers/Context';
 
 import Loading from '../../components/Loading';
 import ProductDetail from '../../containers/ProductDetail';
 
 const Product = () => {
-  const list = useContext(ListContext);
   const [productSelected, setproductSelected] = useState({});
 
   let location = useLocation();
@@ -21,11 +18,11 @@ const Product = () => {
         .then(data => setproductSelected(data.data))
       } catch (e) {
         console.error(e);
-        throw "Serviço indisponível, tente novamente mais tarde"
+        throw new Error("Serviço indisponível, tente novamente mais tarde")
       }
     };
     fetchProduct();
-  }, []);
+  }, [location.pathname]);
 
   return (
     <main>

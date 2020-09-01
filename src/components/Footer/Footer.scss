@@ -5,8 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
   background-color: $black;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
   & p {
@@ -15,14 +13,17 @@
   }
   
   &__links {
-    width: 35%;
+    width: 120px;
     display: flex;
     justify-content: space-evenly;
     font-size: 14px;
     color: $white;
-    // cursor: pointer;
-    // &:hover {
-    //   color: darken($color: $white, $amount: 0)
-    // }
+    @media (min-width: 1024px){
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        color: $burgundy;
+      }
+    }
   }
 }
