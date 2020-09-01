@@ -2,14 +2,14 @@ import React from 'react';
 import './List.scss';
 
 import ListItem from '../../components/ListItem';
-import Button from '../../components/Button';
 
-const List = () => {
+const List = ({list}) => {
   return (
-    <>
-      <ListItem />
-      <Button />
-    </>
+    <ul>
+      {list.map(item => <ListItem item={item} 
+        key={item.sku} />
+      )} 
+    </ul>
   )
 }
 

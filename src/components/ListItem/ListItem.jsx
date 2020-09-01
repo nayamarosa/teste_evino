@@ -1,9 +1,18 @@
 import React from 'react';
 import './ListItem.scss';
 
-const ListItem = () => {
+import Button from '../../components/Button';
+
+const ListItem = ({item}) => {
+  const { images, name, prices } = item
+  
   return (
-    <p>oi</p>
+    <li>
+      <img src={images.medium} alt={name}/>
+      <h2>{name}</h2>
+      <p>{prices.recommended}</p>
+      <Button />
+    </li>
   )
 }
 
