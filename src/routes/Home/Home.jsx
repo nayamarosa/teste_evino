@@ -5,7 +5,7 @@ import { ListContext } from '../../containers/Context';
 import List from '../../containers/List';
 
 const Home = () => {
-  const list = useContext(ListContext)
+  const list = useContext(ListContext);
 
   return (
     <List list={list}/>
