@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
 
 import { ListContext } from '../../containers/Context';
+
+import ProductDetail from '../../containers/ProductDetail';
 
 const Product = () => {
   const list = useContext(ListContext);
@@ -11,13 +13,13 @@ const Product = () => {
   useEffect(() => {
     let pathname = location.pathname;
     let productUrl = pathname.split("/")[2];
-    const filter = list.filter((item) => item.sku.includes(productUrl));
+    const filter = list.filter((item) => item.url.includes(productUrl));
     
     setproductSelected(filter)     
-  }, [location.pathname, products])
+  }, [location.pathname, list])
 
   return (
-    <main className="container">
+    <main>
       <ProductDetail productSelected={productSelected}/>
     </main>
   )

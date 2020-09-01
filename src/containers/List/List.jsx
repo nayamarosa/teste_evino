@@ -7,14 +7,14 @@ const List = ({list}) => {
   let history = useHistory();
   const handleProductCode = (e, url) => {
     e.preventDefault()
-    history.push('/produto/' + url);
+    history.push('/product/' + url);
   }
 
   return (
     <ul className="list">
       {list.map(item => <ListItem item={item} 
         key={item.sku}
-        onClick={(e) => handleProductCode(e, item.sku)}
+        onClick={(e) => handleProductCode(e, item.url)}
         />
       )} 
     </ul>
